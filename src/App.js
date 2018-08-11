@@ -20,8 +20,6 @@ export default class App extends React.Component {
   }
 
   handleMenuButtonClick(e) {
-    console.log('enter');
-    console.log(e);
     this.setState(prevState => {
       return {expand: !prevState.expand};
     });
@@ -29,6 +27,7 @@ export default class App extends React.Component {
 
   render() {
     let expandedContainer = null;
+    let hamburgerIcon = null;
     if (this.state.expand) {
       expandedContainer = this.state.menuItems.map((item, index) => {
         return(
@@ -38,18 +37,33 @@ export default class App extends React.Component {
     }
     return (
       <div className="root">
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton className="menuButton" color="inherit" aria-label="Menu">
-              <MenuIcon onClick={this.handleMenuButtonClick}/>
-            </IconButton>
-            <Typography variant="title" color="inherit" className="flex">
-              News
-            </Typography>
-            <Button color="inherit">Login</Button>
-          </Toolbar>
-          {expandedContainer}
-        </AppBar>
+        <div className='nav-top'>
+          <AppBar position="static">
+            <Toolbar>
+              <Typography variant="title" color="inherit" className="flex">
+                Top
+              </Typography>
+              <Button color="inherit">Login</Button>
+            </Toolbar>
+            {expandedContainer}
+          </AppBar>
+        </div>
+        <div className='nav-bottom'>
+          <AppBar position="static">
+            <Toolbar>
+              <div className="menuButton">
+                <IconButton color="inherit" aria-label="Menu">
+                  <MenuIcon onClick={this.handleMenuButtonClick}/>
+                </IconButton>
+              </div>
+              <Typography variant="title" color="inherit" className="flex">
+                Bottom
+              </Typography>
+              <Button color="inherit">Login</Button>
+            </Toolbar>
+            {expandedContainer}
+          </AppBar>
+        </div>
       </div>
     );
   }
