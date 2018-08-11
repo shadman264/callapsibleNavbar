@@ -1,5 +1,12 @@
+body {
+  margin: 0;
+}
 .root {
   flex-grow: 1;
+}
+.nav-bottom {
+  width: 100%;
+  position: fixed;
 }
 
 .flex {
@@ -15,6 +22,7 @@
 @media only screen and (max-width: 600px) {
   .nav-top {
     display: none;
+    /* position: absolute; */
   }
   .menuButton {
     display: flex
@@ -25,6 +33,7 @@
 @media only screen and (min-width: 600px) {
   .nav-top {
     display: none;
+    /* position: absolute; */
   }
   .menuButton {
     display: flex
@@ -35,6 +44,7 @@
 @media only screen and (min-width: 768px) {
   .nav-top {
     display: flex;
+    /* position: absolute; */
   }
   .menuButton {
     display: none
@@ -45,6 +55,7 @@
 @media only screen and (min-width: 992px) {
   .nav-top {
     display: flex;
+    /* position: absolute; */
   }
   .menuButton {
     display: none
@@ -55,6 +66,7 @@
 @media only screen and (min-width: 1200px) {
   .nav-top {
     display: flex;
+    /* position: absolute; */
   }
   .menuButton {
     display: none
